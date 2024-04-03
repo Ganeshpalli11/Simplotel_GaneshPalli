@@ -1,0 +1,294 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+
+}
+
+
+.main{
+    position:relative;
+    background: linear-gradient(to right, #FEF3B1, #FFD7CD);
+}
+.navbar {
+    background: #ff7171;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index:99;
+}
+
+.navbar nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin: 0;
+    height: 100%;
+    
+}
+
+.navbar nav ul li {
+    margin: 0;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding: 15px;
+    color:black;
+}
+
+.menu {
+    width: 50px;
+    height: 50px;
+    cursor: pointer; 
+    display: none; 
+}
+
+@media screen and (max-width: 950px) {
+    body{
+        overflow: visible; 
+
+    }
+    .navbar{
+        background-color: #ff7171;
+
+    }
+    .navbar nav ul {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 0px; 
+        left: 0;
+        background-color: #ff7171;
+        width: 100%;
+        height:500px;
+        padding-top: 5px; 
+        animation: slideInRight 0.5s forwards; 
+        transform: translateX(100%); 
+    }
+
+    .navbar nav ul.active {
+        display: flex;
+        animation: slideInFromRight 0.5s forwards; 
+        transform: translateX(0); 
+    }
+
+    .navbar nav ul li {
+        margin-top: 12px; 
+        text-align: center; 
+    }
+
+    .menu {
+        display: block; 
+        position: absolute;
+        top: 0;
+        right: 20px;
+    }
+    .menu2{
+        display: none;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%); 
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%); 
+    }
+    to {
+        transform: translateX(0); 
+    }
+}
+.menu2{
+    height: 50px;
+    width:50px;
+}
+
+.content {
+    display: flex;
+}
+
+.sub-content{
+    width: 50%; 
+    box-sizing: border-box; 
+}
+.content-img {
+    height: 100vh;
+
+    width: 50%; 
+    box-sizing: border-box; 
+}
+
+.content-img img {
+    width: 100%; 
+    height: 100%;
+
+}
+.sub-content{
+    display:flex;
+    flex-direction: column;
+}
+
+.sub-content p{
+    position: relative;
+    top:20%;
+    width:80%;
+    display: flex;
+    margin-left: 10%;
+    justify-content: flex-start;
+    font-size:16px;
+}
+.montserrat1{
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+    position:relative;
+    top:20%;
+    font-size: 48px;
+    font-weight: 800;
+  }
+  
+  .roboto-flex1{
+    font-family: "Roboto Flex", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0,
+      "wdth" 100,
+      "GRAD" 0,
+      "XOPQ" 96,
+      "XTRA" 468,
+      "YOPQ" 79,
+      "YTAS" 750,
+      "YTDE" -203,
+      "YTFI" 738,
+      "YTLC" 514,
+      "YTUC" 712;
+  }
+  .sub-content h1 {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 10%;
+    letter-spacing: 0.1cm;
+
+}
+.button{
+    position:relative;
+    top:25%;
+    left: 10%;
+    width:200px;
+    
+}
+.button button{
+    width:200px;
+    height:40px;
+    padding:10px;
+    background:#ff7171;
+    color:white;
+    border:solid 2px transparent;
+    position: relative;
+    overflow: hidden;
+}
+.button button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: white;
+    transition: left 1s ease;
+    opacity: 0.5;
+}
+
+.button button:hover::before {
+    left: 100%;
+}
+
+.amiri-bold {
+    font-family: "Amiri", serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0.1cm;
+  }
+  @media screen and (max-width:950px){
+    .content{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px;
+        width:100%;
+        
+    }
+ .sub-content{
+    
+width:100vw; }
+
+.content-img{
+    height:500px;
+    width:400px;
+}}
+
+@media screen and (max-width:768px){
+    .sub-content h1{
+        font-size: 38px;
+    }
+}
+html{
+    min-width: 400px;
+}
+.navbar nav ul li {
+    position: relative;
+    overflow: hidden; 
+}
+
+.navbar nav ul li:hover::after {
+    content: ''; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, white); 
+    z-index: 1;
+    animation: slideRight 1s forwards; 
+}
+
+@keyframes slideRight {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding: 15px;
+    color: black;
+    position: relative;
+    z-index: 2; 
+}
+
